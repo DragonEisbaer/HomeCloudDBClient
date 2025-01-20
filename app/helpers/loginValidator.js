@@ -1,7 +1,6 @@
 import axios from "axios";
-import { useState } from "react";
 
-export function loginValidator(username, password) {
+export async function loginValidator(username, password) {
   const server = "http://192.168.178.60:3000";
   axios
     .post(server + "/auth/login", {
@@ -9,7 +8,7 @@ export function loginValidator(username, password) {
       password: password,
     })
     .then((response) => {
-      if (response.data.message == "Erfolgreich eingeloggt.") return true;
+      if (response.data.message == "Erfolgreich eingeloggt.") { console.log("login"); return true;}
       else return false;
     })
     .catch((error) => {

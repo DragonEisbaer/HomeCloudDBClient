@@ -21,7 +21,7 @@ export default function LoginScreen({ navigation }) {
         routes: [{ name: "HomeScreen" }],
       });
     }else{
-      alert("Invalid username or password" + loginValidator(username.value, password.value));
+      alert("Falsche Anmeldedaten!");
       console.log(username.value + " + " + password.value);
     }
   };
